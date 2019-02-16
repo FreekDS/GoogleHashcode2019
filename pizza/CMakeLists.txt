@@ -1,6 +1,8 @@
 INCLUDE_DIRECTORIES(include)
 SET(SRC
-        src/main.cpp)
+        src/main.cpp
+        src/PizzaParser.cpp
+        )
 
 FILE(COPY input DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 FILE(COPY out DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
