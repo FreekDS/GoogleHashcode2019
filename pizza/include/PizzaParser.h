@@ -11,6 +11,13 @@ enum Ingredients {
     TOMATO
 };
 
+struct Position{
+    unsigned int x;
+    unsigned int y;
+};
+
+using Slice = std::pair<Position, Position>;
+
 struct Pizza {
     std::vector<std::vector<Ingredients>> ingredients;
     int minIngredients;
@@ -18,18 +25,18 @@ struct Pizza {
     int rowNum;
     int colNum;
     friend std::ostream& operator<<(std::ostream& os, const Pizza& pizza);
+    std::vector<Slice> slices;
 };
 
-using Slice = std::pair<std::pair<unsigned int, unsigned int>, std::pair<unsigned int, unsigned int>>;
 
 class PizzaParser {
 private:
     static std::array<int, 4> splitOn(const std::string& input, char ch);
 
 public:
-    static Pizza parseFile(const std::string& file_name);
+    static Pizza parse(const std::string& file_name);
 
-    static void generateOutput(const std::vector<Slice>& slices, const std::string& file_name);
+    static void generateOutput(const Pizza& pizza, const std::string& file_name = "output.out");
 };
 
 #endif //PIZZAPROBLEM_PIZZAPARSER_H

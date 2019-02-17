@@ -2,7 +2,7 @@
 #include <fstream>
 #include <sstream>
 
-Pizza PizzaParser::parseFile(const std::string& file_name)
+Pizza PizzaParser::parse(const std::string& file_name)
 {
     std::ifstream in(file_name);
     std::string line;
@@ -47,9 +47,18 @@ Pizza PizzaParser::parseFile(const std::string& file_name)
     return pizza;
 }
 
-void PizzaParser::generateOutput(const std::vector<Slice>& slices, const std::string& file_name)
+void PizzaParser::generateOutput(const Pizza& pizza, const std::string& file_name)
 {
+    std::string file = "out/" + file_name;
+    std::ofstream outFile(file);
+    if(!outFile.is_open())
+        throw std::runtime_error("Cannot create file " + file);
 
+    outFile << pizza.slices.size() << std::endl;
+    for(const Slice& slice : pizza.slices)
+        outFile << slice.first.x << " " << slice.second.x << " " << slice.first.y << " " << slice.second.y << std::endl;
+
+    outFile.close();
 }
 
 std::array<int, 4> PizzaParser::splitOn(const std::string& input, char ch = ' ')
