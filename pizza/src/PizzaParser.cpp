@@ -94,3 +94,13 @@ std::ostream& operator<<(std::ostream& os, const Pizza& pizza)
     os << "-----------------------------------------------" << std::endl;
     return os;
 }
+
+
+int Pizza::countCells(const Slice& slice)
+{
+    const Position& start = slice.first;
+    const Position& end = slice.second;
+    int tempX = abs(static_cast<int>(end.x - start.x)) + 1;
+    int tempY = abs(static_cast<int>(end.y - start.y)) + 1;
+    return tempX * tempY;
+}
