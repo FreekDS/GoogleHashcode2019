@@ -14,6 +14,7 @@ enum Ingredients {
 struct Position{
     unsigned int x;
     unsigned int y;
+    Position(unsigned int posx,unsigned int posy):x(posx),y(posy){}
 };
 
 using Slice = std::pair<Position, Position>;
