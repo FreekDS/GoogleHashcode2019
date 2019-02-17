@@ -11,7 +11,7 @@ enum Ingredients {
     TOMATO
 };
 
-struct Position{
+struct Position {
     unsigned int x;
     unsigned int y;
     Position(unsigned int posx,unsigned int posy):x(posx),y(posy){}
@@ -21,14 +21,15 @@ using Slice = std::pair<Position, Position>;
 
 struct Pizza {
     std::vector<std::vector<Ingredients>> ingredients;
+    std::vector<Slice> slices;
     int minIngredients;
     int sliceSize;
     int rowNum;
     int colNum;
-    friend std::ostream& operator<<(std::ostream& os, const Pizza& pizza);
-    std::vector<Slice> slices;
-};
 
+    friend std::ostream& operator<<(std::ostream& os, const Pizza& pizza);
+    static int countCells(const Slice& slice);
+};
 
 class PizzaParser {
 private:
@@ -39,5 +40,7 @@ public:
 
     static void generateOutput(const Pizza& pizza, const std::string& file_name = "output.out");
 };
+
+
 
 #endif //PIZZAPROBLEM_PIZZAPARSER_H
