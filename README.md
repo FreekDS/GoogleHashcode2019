@@ -1,2 +1,2 @@
 # PizzaProblem
-Google hash code pizza problem
+Google hash code project
