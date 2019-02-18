@@ -15,6 +15,7 @@ struct Position {
     unsigned int x;
     unsigned int y;
     Position(unsigned int posx,unsigned int posy):x(posx),y(posy){}
+    Position() = default;
 };
 
 using Slice = std::pair<Position, Position>;
@@ -29,6 +30,7 @@ struct Pizza {
 
     friend std::ostream& operator<<(std::ostream& os, const Pizza& pizza);
     static int countCells(const Slice& slice);
+    int calculateScore();
 };
 
 class PizzaParser {

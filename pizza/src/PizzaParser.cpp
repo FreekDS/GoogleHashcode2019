@@ -104,3 +104,11 @@ int Pizza::countCells(const Slice& slice)
     int tempY = abs(static_cast<int>(end.y - start.y)) + 1;
     return tempX * tempY;
 }
+
+int Pizza::calculateScore()
+{
+    int sum = 0;
+    for(const auto& slice : slices)
+        sum += Pizza::countCells(slice);
+    return sum;
+}
