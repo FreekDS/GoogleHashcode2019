@@ -1,6 +1,7 @@
 #include <PizzaParser.h>
 #include <fstream>
 #include <sstream>
+#include <iostream>
 
 Pizza PizzaParser::parse(const std::string& file_name)
 {
