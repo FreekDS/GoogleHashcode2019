@@ -9,14 +9,18 @@
  */
 int main(int argc, char* argv[])
 {
-    if(argc < 2)
+    if(argc < 2) {
+        std::cout << "no input path given" << std::endl;
         return EXIT_FAILURE;
+    }
     std::string file = argv[1];
     std::cout << "Hello Pizza lovers!" << std::endl << std::endl;
     Pizza p = PizzaParser::parse(file);
     auto sol=poging1(p);
     p.slices = sol;
     std::cout << "Score: " << p.calculateScore() << std::endl;
-    PizzaParser::generateOutput(p, "c_medium");
+    PizzaParser::generateOutput(p, "a_example");
+
+
     return EXIT_SUCCESS;
 }

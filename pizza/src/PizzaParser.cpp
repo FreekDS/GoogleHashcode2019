@@ -57,7 +57,7 @@ void PizzaParser::generateOutput(const Pizza& pizza, const std::string& file_nam
 
     outFile << pizza.slices.size() << std::endl;
     for(const Slice& slice : pizza.slices)
-        outFile << slice.first.x << " " << slice.second.x << " " << slice.first.y << " " << slice.second.y << std::endl;
+        outFile << slice.first.x << " " << slice.first.y << " " << slice.second.x << " " << slice.second.y << std::endl;
 
     outFile.close();
 }

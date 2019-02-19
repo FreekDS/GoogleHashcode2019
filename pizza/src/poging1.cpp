@@ -41,7 +41,7 @@ vector<Slice> poging1Rijen(Pizza& p)
         Position p1 = Position(bx, by);
         Position p2 = Position(cx, cy);
         if (checkEnoughIngredients(p, p1, p2)) {
-            if (cx-bx<=p.sliceSize) {
+            if (cx-bx<p.sliceSize) {
                 auto pair = make_pair(p1, p2);
                 solution.push_back(pair);
                 bx = cx+1;
@@ -81,7 +81,7 @@ vector<Slice> poging1kolommen(Pizza& p)
         Position p1 = Position(bx, by);
         Position p2 = Position(cx, cy);
         if (checkEnoughIngredients(p, p1, p2)) {
-            if (cy-by<=p.sliceSize) {
+            if (cy-by<p.sliceSize) {
                 auto pair = make_pair(p1, p2);
                 solution.push_back(pair);
                 by = cy+1;
