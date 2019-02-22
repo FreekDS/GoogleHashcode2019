@@ -41,6 +41,8 @@ public:
     static Pizza parse(const std::string& file_name);
 
     static void generateOutput(const Pizza& pizza, const std::string& file_name = "output.out");
+
+    static bool checkEnoughIngredients(Pizza& p, Position& pos1,Position& pos2);
 };
 
 

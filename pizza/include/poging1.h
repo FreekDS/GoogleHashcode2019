@@ -1,6 +1,6 @@
-//
-// Created by thibaut on 17.02.19.
-//
+//the functions depicted in this file are all an attempt at the google hashcode pizza problem
+//these function are a smallest slice first by row and by collumns
+//slices always have a width or height of 1
 
 #ifndef PROJECT_POGING1_H
 #define PROJECT_POGING1_H
@@ -8,9 +8,6 @@
 #include "PizzaParser.h"
 using namespace std;
 
-bool checkEnoughIngredients(Pizza& p, Position& pos1,Position& pos2);
-
-bool alreadyinSlice(vector<Slice> sl, Position& pos1);
 
 vector<Slice> poging1Rijen(Pizza& p);
 

@@ -113,3 +113,17 @@ int Pizza::calculateScore()
         sum += Pizza::countCells(slice);
     return sum;
 }
+
+bool PizzaParser::checkEnoughIngredients(Pizza& p, Position& pos1, Position& pos2)
+{
+    int tom = 0;
+    int mush = 0;
+    for (int i = pos1.x; i<pos2.x+1; i++) {
+        for (int j = pos1.y; j<pos2.y+1; j++) {
+            Ingredients in = p.ingredients[i][j];
+            if (in==MUSHROOM)mush++;
+            if (in==TOMATO)tom++;
+        }
+    }
+    return tom>=p.minIngredients && mush>=p.minIngredients;
+};

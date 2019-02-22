@@ -4,6 +4,7 @@ SET(SRC
         src/main.cpp
         src/PizzaParser.cpp
         src/poging1.cpp
+        src/poging2.cpp
         )
 
 FILE(COPY input DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

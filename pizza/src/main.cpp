@@ -1,5 +1,6 @@
 #include <iostream>
-#include "poging1.h"
+//#include "poging1.h"
+#include "poging2.h"
 
 /**
  * Run the program
@@ -16,7 +17,7 @@ int main(int argc, char* argv[])
     std::string file = argv[1];
     std::cout << "Hello Pizza lovers!" << std::endl << std::endl;
     Pizza p = PizzaParser::parse(file);
-    auto sol=poging1(p);
+    auto sol=poging2(p);
     p.slices = sol;
     std::cout << "Score: " << p.calculateScore() << std::endl;
     PizzaParser::generateOutput(p, "a_example");
