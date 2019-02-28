@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
     p1.tags={"sun","beach"};
     p2.tags={"sun","bier"};
 
-    auto i=getOtherPhoto(p1,{p2},4,{"sun","beach","bier"});
+    auto i=getOtherPhoto(p1,{p2},3,{"sun","beach","bier"});
     return 0;
 
 }
