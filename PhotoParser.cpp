@@ -3,6 +3,25 @@
 #include <algorithm>
 
 
+void PhotoParser::generateOutput(const std::string &out_file, const vector<Slide> &slides) {
+    ofstream out(out_file);
+    if(!out.is_open())
+        throw runtime_error("foute out file he vriend");
+    out << slides.size() << endl;
+    for(const auto& slide : slides) {
+        string line;
+        for(const auto& ph : slide.photos){
+            line += to_string(ph.id);
+            line += ' ';
+        }
+        line.pop_back();
+        out << line.substr() << endl;
+    }
+    out.close();
+}
+
+
+
 vector<Photo> PhotoParser::parseInput(const std::string &in_file) {
     ifstream input(in_file);
     if(!input.is_open())
