@@ -4,7 +4,7 @@ SET(CMAKE_CXX_STANDARD 14)
 
 SET(SRC main.cpp
         PhotoParser.cpp
-        PhotoParser.h)
+        PhotoParser.h slideSorter.cpp slideSorter.h)
 
 FILE(COPY in DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 

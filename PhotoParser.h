@@ -53,7 +53,7 @@ const Photo getOtherPhoto(const Photo& first, const vector<Photo>& others,int mi
 
 int getDifferentInts(vector<pair<Slide,int>> slides);
 
-map<int, set<pair<Slide, int>>> sortIntoSets(vector<pair<Slide, int>> slides);
+map<int, set<Slide> > sortIntoSets(vector<pair<Slide, int>> slides);
 
 std::vector<Slide> getFirstInSet(set<Slide> einde,set<Slide> slideset);
 

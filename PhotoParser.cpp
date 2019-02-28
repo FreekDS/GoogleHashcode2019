@@ -178,11 +178,11 @@ const Photo getOtherPhoto(const Photo& first, const vector<Photo>& others,int mi
     return toretrun; // !!! als geen gevonden return dezelfde foto
 }
 
-map<int, set<pair<Slide, int>>> sortIntoSets(vector<pair<Slide, int>> slides) {
+map<int, set<Slide> > sortIntoSets(vector<pair<Slide, int>> slides) {
     vector<pair<set<Slide>, int>> result;
     map<int, set<pair<Slide, int>>> mapje;
     for(auto vroem : slides ){
-        mapje[vroem.second].insert(vroem);
+        mapje[vroem.second].insert(vroem.first);
     }
     return mapje;
 }
