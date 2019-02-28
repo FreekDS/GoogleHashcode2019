@@ -136,16 +136,13 @@ const Photo &getOtherPhoto(const Photo &first, const vector<Photo> &others) {
     return first; // !!! als geen gevonden return dezelfde foto
 }
 
-vector<pair<set<Slide>, int>> sortIntoSets(vector<pair<Slide, int>> slides) {
-    for( int i = 0; i<slides.size(); i++){
-        for(int j = 0 ; j<slides.size(); j++){
-            if (i == j){
-                continue;
-            }
-
-        }
+map<int, set<pair<Slide, int>>> sortIntoSets(vector<pair<Slide, int>> slides) {
+    vector<pair<set<Slide>, int>> result;
+    map<int, set<pair<Slide, int>>> mapje;
+    for(auto vroem : slides ){
+        mapje[vroem.second].insert(vroem);
     }
-    return vector<pair<set<Slide>, int>>();
+    return mapje;
 }
 
 int getDifferentInts(vector<pair<Slide, int>> slides) {
