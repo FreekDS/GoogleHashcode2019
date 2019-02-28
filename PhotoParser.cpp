@@ -1,5 +1,5 @@
-//
-// Created by Freek on 28/02/2019.
-//
-
 #include "PhotoParser.h"
+
+vector<Photo> PhotoParser::parseInput(const std::string &in_file) {
+    return vector<Photo>();
+}
