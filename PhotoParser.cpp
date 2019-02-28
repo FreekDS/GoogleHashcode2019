@@ -20,7 +20,20 @@ void PhotoParser::generateOutput(const std::string &out_file, const vector<Slide
     out.close();
 }
 
-
+int compareTags(Slide slide1, Slide slide2) {
+    int count = 0;
+    for(auto& photo1 : slide1.photos){
+        for(auto& tag1 : photo1.tags){
+            for(auto& photo2 : slide2.photos){
+                for(auto& tag2 : photo2.tags) {
+                    if(tag1 == tag2)
+                        count++;
+                }
+            }
+        }
+    }
+    return count;
+}
 
 vector<Photo> PhotoParser::parseInput(const std::string &in_file) {
     ifstream input(in_file);
