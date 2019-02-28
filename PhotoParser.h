@@ -7,8 +7,14 @@
 
 using namespace std;
 
+enum Direction{
+    HORIZONTAL,
+    VERTICAL
+};
+
 struct Photo {
     std::set<std::string> tags;
+    Direction dir;
 };
 
 int calculatescore(const vector<Photo>& photos);
