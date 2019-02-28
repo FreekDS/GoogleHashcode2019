@@ -15,6 +15,7 @@ enum Direction{
 struct Photo {
     std::set<std::string> tags;
     Direction dir;
+    int id;
 };
 
 struct Slide{
@@ -30,6 +31,7 @@ private:
     static vector<string> splitOnSpace(string line);
 public:
     static vector<Photo> parseInput(const std::string& in_file);
+    static void generateOutput(const std::string& out_file, const vector<Slide>& slides);
 };
 
 
