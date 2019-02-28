@@ -213,13 +213,46 @@ std::vector<Slide> getFirstInSet(set<Slide> einde,set<Slide> slideset){
     for(auto i:einde){
         for(auto j:slideset){
             if(compareTags(i,j)==matchneeded){
+                einde.erase(i);
                 return {i,j};
             }
         }
     }
+
     matchneeded--;
     if(matchneeded<0){
         return {};
     }
 }
 
+bool Slide::operator<(const Slide &rhs) const {
+    return photos < rhs.photos;
+}
+
+bool Slide::operator>(const Slide &rhs) const {
+    return rhs < *this;
+}
+
+bool Slide::operator<=(const Slide &rhs) const {
+    return !(rhs < *this);
+}
+
+bool Slide::operator>=(const Slide &rhs) const {
+    return !(*this < rhs);
+}
+
+bool Photo::operator<(const Photo &rhs) const {
+    return id < rhs.id;
+}
+
+bool Photo::operator>(const Photo &rhs) const {
+    return rhs < *this;
+}
+
+bool Photo::operator<=(const Photo &rhs) const {
+    return !(rhs < *this);
+}
+
+bool Photo::operator>=(const Photo &rhs) const {
+    return !(*this < rhs);
+}

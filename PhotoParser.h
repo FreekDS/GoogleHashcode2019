@@ -17,10 +17,26 @@ struct Photo {
     std::set<std::string> tags;
     Direction dir;
     int id;
+
+    bool operator<(const Photo &rhs) const;
+
+    bool operator>(const Photo &rhs) const;
+
+    bool operator<=(const Photo &rhs) const;
+
+    bool operator>=(const Photo &rhs) const;
 };
 
 struct Slide{
     std::vector<Photo> photos;
+
+    bool operator<(const Slide &rhs) const;
+
+    bool operator>(const Slide &rhs) const;
+
+    bool operator<=(const Slide &rhs) const;
+
+    bool operator>=(const Slide &rhs) const;
 };
 
 int calculatescore(const vector<Slide>& slides);
