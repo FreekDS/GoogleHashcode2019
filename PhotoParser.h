@@ -31,7 +31,7 @@ int getDifferentInts(vector<pair<Slide,int>> slides);
 
 map<int, set<pair<Slide, int>>> sortIntoSets(vector<pair<Slide, int>> slides);
 
-Slide getFirstInSet(Slide einde,set<Slide> slideset);
+std::vector<Slide> getFirstInSet(set<Slide> einde,set<Slide> slideset);
 
 int compareTags(Slide s1,Slide s2);
 

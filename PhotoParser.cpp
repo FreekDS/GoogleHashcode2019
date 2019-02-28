@@ -182,8 +182,32 @@ int getDifferentInts(vector<pair<Slide, int>> slides) {
     return ints.size();
 }
 
-Slide getFirstInSet(Slide einde,set<Slide> slideset){
+std::vector<Slide> getFirstInSet(set<Slide> einde,set<Slide> slideset){
+    int matchneeded=0;
+    Slide i =*einde.begin();
+    if(i.photos.size()==1){
+        matchneeded=i.photos[0].tags.size()/2;
+    }else{
+        std::set<std::string> tags;
+        for(auto j:i.photos){
+            for(auto h:j.tags){
+                tags.insert(h);
+            }
+        }
+        matchneeded=tags.size()/2;
+    }
 
+    for(auto i:einde){
+        for(auto j:slideset){
+            if(compareTags(i,j)==matchneeded){
+                return {i,j};
+            }
+        }
+    }
+    matchneeded--;
+    if(matchneeded<0){
+        return {};
+    }
 }
 
 int compareTags(Slide s1,Slide s2){
