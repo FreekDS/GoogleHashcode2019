@@ -166,3 +166,10 @@ int getDifferentInts(vector<pair<Slide, int>> slides) {
     return ints.size();
 }
 
+Slide getFirstInSet(Slide einde,set<Slide> slideset){
+
+}
+
+int compareTags(Slide s1,Slide s2){
+
+}
