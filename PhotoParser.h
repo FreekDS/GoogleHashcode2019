@@ -20,8 +20,10 @@ struct Photo {
 int calculatescore(const vector<Photo>& photos);
 
 class PhotoParser {
+private:
+    static vector<string> splitOnSpace(string line);
 public:
-    vector<Photo> parseInput(const std::string& in_file);
+    static vector<Photo> parseInput(const std::string& in_file);
 };
 
 

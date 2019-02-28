@@ -6,5 +6,7 @@ SET(SRC main.cpp
         PhotoParser.cpp
         PhotoParser.h)
 
+FILE(COPY in DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 ADD_EXECUTABLE(run
         ${SRC})
