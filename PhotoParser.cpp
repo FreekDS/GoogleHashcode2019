@@ -223,6 +223,3 @@ std::vector<Slide> getFirstInSet(set<Slide> einde,set<Slide> slideset){
     }
 }
 
-int compareTags(Slide s1,Slide s2){
-
-}
