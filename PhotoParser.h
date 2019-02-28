@@ -1,0 +1,10 @@
+#ifndef HASHCODE_PHOTOPARSER_H
+#define HASHCODE_PHOTOPARSER_H
+
+
+class PhotoParser {
+
+};
+
+
+#endif //HASHCODE_PHOTOPARSER_H
