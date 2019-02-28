@@ -26,12 +26,17 @@ int calculatescore(const vector<Slide>& slides);
 
 const Photo getOtherPhoto(const Photo& first, const vector<Photo>& others,int minSize,std::vector<std::string> containing);
 
+int getDifferentInts(vector<pair<Slide,int>> slides);
+
+vector <pair<set<Slide>, int>> sortIntoSets(vector<pair<Slide, int>> slides);
+
 class PhotoParser {
 private:
     static vector<string> splitOnSpace(string line);
 public:
     static vector<Photo> parseInput(const std::string& in_file);
     static void generateOutput(const std::string& out_file, const vector<Slide>& slides);
+
 };
 
 

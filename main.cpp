@@ -20,3 +20,6 @@ int main(int argc, char* argv[])
     return 0;
 
 }
+//vector van pair (slides en ints(hoeveel tags in de slide))
+
+//sort tags
