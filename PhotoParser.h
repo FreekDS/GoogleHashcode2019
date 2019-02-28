@@ -24,7 +24,7 @@ struct Slide{
 
 int calculatescore(const vector<Slide>& slides);
 
-const Photo& getOtherPhoto(const Photo& first, const vector<Photo>& others);
+const Photo getOtherPhoto(const Photo& first, const vector<Photo>& others,int minSize,std::vector<std::string> containing);
 
 class PhotoParser {
 private:
