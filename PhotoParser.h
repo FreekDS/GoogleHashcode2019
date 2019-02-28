@@ -17,7 +17,11 @@ struct Photo {
     Direction dir;
 };
 
-int calculatescore(const vector<Photo>& photos);
+struct Slide{
+    std::vector<Photo> photos;
+};
+
+int calculatescore(const vector<Slide>& slides);
 
 class PhotoParser {
 private:

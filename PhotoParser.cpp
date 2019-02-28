@@ -1,5 +1,6 @@
 #include "PhotoParser.h"
 #include <fstream>
+#include <algorithm>
 
 
 vector<Photo> PhotoParser::parseInput(const std::string &in_file) {
@@ -46,5 +47,49 @@ vector<string> PhotoParser::splitOnSpace(string line) {
     return result;
 }
 
+int calculatescore(const vector<Slide> &slides) {
+    if(slides.size()<2)return 0;
+    int total=0;
+    for (int i = 0; i < slides.size(); ++i) {
 
+        int score1=0;
+        int score2=0;
+        int score3=0;
+        Slide s1=slides[i];
+        Slide s2=slides[i+1];
+        std::set<string> tags1;
+        for(auto i:s1.photos){
+            for(auto j:i.tags) tags1.insert(j);
+        }
+        std::set<string> tags2;
+        for(auto i:s2.photos){
+            for(auto j:i.tags) tags2.insert(j);
+        }
+
+        for(auto i:tags1){
+            bool search=false;
+            for(auto j:tags2){
+                if(j==i) search=true;
+            }
+            if(search){
+                score1++;
+            }else{
+                score2++;
+            }
+
+        }
+        for(auto i:tags2) {
+            bool search = false;
+            for (auto j:tags1) {
+                if (j == i) search = true;
+            }
+            if (!search) {
+                score3++;
+            }
+        }
+        total+=std::min(score1,std::min(score2,score3));
+
+    }
+    return total;
+}
 
