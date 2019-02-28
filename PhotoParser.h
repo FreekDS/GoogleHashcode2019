@@ -23,6 +23,8 @@ struct Slide{
 
 int calculatescore(const vector<Slide>& slides);
 
+const Photo& getOtherPhoto(const Photo& first, const vector<Photo>& others);
+
 class PhotoParser {
 private:
     static vector<string> splitOnSpace(string line);

@@ -93,3 +93,29 @@ int calculatescore(const vector<Slide> &slides) {
     return total;
 }
 
+const Photo& getOtherPhoto(const Photo& first, const vector<Photo>& others) {
+    int check = 0;
+    int tagsInCommon = 0;
+    for(const Photo& other : others) {
+        if(other.dir == HORIZONTAL)
+            continue;
+        for(const auto& tagFirst : first.tags)
+            for(const auto& tagOther : other.tags){
+                if(tagFirst == tagOther)
+                    tagsInCommon++;
+            }
+        if(tagsInCommon <= check)
+            return other;
+        else {
+            check++;
+            tagsInCommon = 0;
+        }
+    }
+    // none found, take the first one:
+    for(const auto& ph : others)
+        if(ph.dir == VERTICAL)
+            return ph;
+
+    return first; // !!! als geen gevonden return dezelfde foto
+}
+
