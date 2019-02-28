@@ -25,6 +25,10 @@ struct Photo {
     bool operator<=(const Photo &rhs) const;
 
     bool operator>=(const Photo &rhs) const;
+
+    bool operator==(const Photo &rhs) const;
+
+    bool operator!=(const Photo &rhs) const;
 };
 
 struct Slide{
@@ -37,6 +41,10 @@ struct Slide{
     bool operator<=(const Slide &rhs) const;
 
     bool operator>=(const Slide &rhs) const;
+
+    bool operator==(const Slide &rhs) const;
+
+    bool operator!=(const Slide &rhs) const;
 };
 
 int calculatescore(const vector<Slide>& slides);

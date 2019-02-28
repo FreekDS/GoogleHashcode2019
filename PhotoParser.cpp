@@ -241,6 +241,14 @@ bool Slide::operator>=(const Slide &rhs) const {
     return !(*this < rhs);
 }
 
+bool Slide::operator==(const Slide &rhs) const {
+    return photos == rhs.photos;
+}
+
+bool Slide::operator!=(const Slide &rhs) const {
+    return !(rhs == *this);
+}
+
 bool Photo::operator<(const Photo &rhs) const {
     return id < rhs.id;
 }
@@ -255,4 +263,12 @@ bool Photo::operator<=(const Photo &rhs) const {
 
 bool Photo::operator>=(const Photo &rhs) const {
     return !(*this < rhs);
+}
+
+bool Photo::operator==(const Photo &rhs) const {
+    return id == rhs.id;
+}
+
+bool Photo::operator!=(const Photo &rhs) const {
+    return !(rhs == *this);
 }
