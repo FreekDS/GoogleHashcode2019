@@ -4,6 +4,7 @@
 #include <set>
 #include <string>
 #include <vector>
+#include <map>
 
 using namespace std;
 
@@ -28,7 +29,7 @@ const Photo getOtherPhoto(const Photo& first, const vector<Photo>& others,int mi
 
 int getDifferentInts(vector<pair<Slide,int>> slides);
 
-vector <pair<set<Slide>, int>> sortIntoSets(vector<pair<Slide, int>> slides);
+map<int, set<pair<Slide, int>>> sortIntoSets(vector<pair<Slide, int>> slides);
 
 Slide getFirstInSet(Slide einde,set<Slide> slideset);
 
